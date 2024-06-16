@@ -1,0 +1,15 @@
+[package]
+name = "rust-genai-test"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.78"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused = { level = "allow", priority = -1 } # for exploratory dev
+
+[dependencies]
+# -- Async 
+tokio = { version = "1", features = ["full"] }
+# -- GenAI
+genai = "=0.1.1" # the equal sign before the version is required to lock to a specific version. ==0.1.1

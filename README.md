@@ -7,7 +7,14 @@ By default, the program uses [`gemini`](https://developers.googleblog.com/en/gem
 
 ## how to run
 
-* Navigate to the location of the main.rs file and run this in your terminal 
+* Navigate to the location of the main.rs file this in your terminal
+
+```
+export GEMINI_API_KEY="your_api_key"
+```
+
+* Then run this to make your query
+
 
 ```
 cargo run "your query"

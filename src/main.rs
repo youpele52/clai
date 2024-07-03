@@ -10,6 +10,9 @@ fn main() {
         process::exit(1);
     });
 
+
+
+
     if let Err(e) = config.query_ai() {
         println!("Application error: {}", e);
         process::exit(1);

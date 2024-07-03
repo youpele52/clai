@@ -13,3 +13,5 @@ unused = { level = "allow", priority = -1 } # for exploratory dev
 tokio = { version = "1", features = ["full"] }
 # -- GenAI
 genai = "=0.1.1" # the equal sign before the version is required to lock to a specific version. ==0.1.1
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

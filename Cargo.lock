@@ -940,6 +940,8 @@ name = "rust-genai-test"
 version = "0.1.0"
 dependencies = [
  "genai",
+ "serde",
+ "serde_json",
  "tokio",
 ]
 

@@ -1,4 +1,4 @@
-# genai test
+# clai
 
 This is a simple command line based program built using [`Rust`](https://www.rust-lang.org/) and [`rust-genai`](https://github.com/jeremychone/rust-genai).
 

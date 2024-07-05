@@ -3,7 +3,6 @@ use std::io::Error;
 use std::path::Path;
 use std::{fs, usize};
 
-pub const DELETE_CHAT_PROMPT: &'static str = "delete chat";
 
 #[derive(Serialize, Deserialize)]
 pub struct Question {

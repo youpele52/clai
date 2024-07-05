@@ -43,7 +43,7 @@ impl Cli {
     }
 
     pub fn delete() -> Result<(), Box<dyn Error>> {
-        Questions::delete_questions();
+        Questions::delete_questions()?;
         Ok(())
     }
 

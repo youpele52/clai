@@ -1,5 +1,5 @@
-use genai::chat::{ChatMessage, ChatRequest, ChatResponse};
-use genai::client::{self, Client};
+use genai::chat::{ChatMessage, ChatRequest};
+use genai::client::Client;
 use genai::utils::print_chat_stream;
 
 // both files are in the same directory or modules, hence we use super

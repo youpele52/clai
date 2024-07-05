@@ -8,6 +8,13 @@ rust-version = "1.78"
 unsafe_code = "forbid"
 unused = { level = "allow", priority = -1 } # for exploratory dev
 
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "s"  # Optimize for size.
+lto = true  # Enable link-time optimization.
+codegen-units = 1  # Maximize size reduction optimizations.
+
+
 [dependencies]
 # -- Async 
 tokio = { version = "1", features = ["full"] }

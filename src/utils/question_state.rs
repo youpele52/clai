@@ -3,7 +3,6 @@ use std::io::Error;
 use std::path::Path;
 use std::{fs, usize};
 
-
 #[derive(Serialize, Deserialize)]
 pub struct Question {
     pub query: String,
@@ -34,10 +33,10 @@ impl Questions {
         if path.exists() {
             fs::remove_file(Self::FILE_PATH)?;
             println!(
-                "\n\nPrevious questions deleted successfully!\nYou can start a new chat anytime..."
+                "\n\nPrevious questions deleted successfully!\nYou can start a new chat anytime...\n"
             );
         } else {
-            println!("\n\nNo previous questions found!\nYou can start a new chat anytime...");
+            println!("\n\nNo previous questions found!\nYou can start a new chat anytime...\n");
         }
         Ok(())
     }

@@ -41,7 +41,7 @@ pub async fn talk_to_ai(
     // export GEMINI_API_KEY="your_api_key"
 
     for question in &question_list.questions {
-        println!("\n\n--Question: {}\n", question.query);
+        println!("\n--Question: {}\n", question.query);
         chat_request = chat_request.append_message(ChatMessage::user(&question.query));
 
         let chat_response = client

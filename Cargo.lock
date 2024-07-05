@@ -87,6 +87,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "clai"
+version = "0.1.0"
+dependencies = [
+ "genai",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -933,16 +943,6 @@ dependencies = [
  "pin-project-lite",
  "reqwest",
  "thiserror",
-]
-
-[[package]]
-name = "rust-genai-test"
-version = "0.1.0"
-dependencies = [
- "genai",
- "serde",
- "serde_json",
- "tokio",
 ]
 
 [[package]]

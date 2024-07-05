@@ -19,3 +19,19 @@ export GEMINI_API_KEY="your_api_key"
 ```
 cargo run "your query"
 ```
+
+* By default the set constraint is "Answer with at most five sentences.". Since, it is a terminal based AI program, it's best to keep answers concise. However to change this by adding one more argument. Like so:
+
+```
+cargo run "your query" "your custom constraint"
+```
+
+
+## state management 
+
+Conversation between the user and the AI is saved locally and is managed using [`Serde JSON`](https://github.com/serde-rs/json). The saved conversation, is only used to give the AI context about the previous questions. To delete the saved conversation use the command below.
+
+```
+cargo run "delete chat"
+```
+

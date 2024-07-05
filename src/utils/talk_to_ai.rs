@@ -3,11 +3,13 @@ use genai::client::{self, Client};
 use genai::utils::print_chat_stream;
 
 // both files are in the same directory or modules, hence we use super
-use super::config::Config;
 use super::question_state::{Question, Questions};
 
 #[tokio::main]
-pub async fn talk_to_ai(args: &Config) -> Result<(), Box<dyn std::error::Error>> {
+pub async fn talk_to_ai(
+    query: String,
+    constraint: String,
+) -> Result<(), Box<dyn std::error::Error>> {
     // load the list of questions from disk or create an empty list
     let mut question_list: Questions = Questions::load_questions().unwrap_or_else(|_| Questions {
         questions: Vec::new(),
@@ -15,7 +17,7 @@ pub async fn talk_to_ai(args: &Config) -> Result<(), Box<dyn std::error::Error>>
 
     // add a new question
     question_list.questions.push(Question {
-        query: args.query.clone(),
+        query: query.clone(),
         id: question_list.questions.len() + 1,
     });
 
@@ -24,7 +26,7 @@ pub async fn talk_to_ai(args: &Config) -> Result<(), Box<dyn std::error::Error>>
 
     let client = Client::default();
 
-    let mut chat_request: ChatRequest = ChatRequest::default().with_system(&args.constraint);
+    let mut chat_request: ChatRequest = ChatRequest::default().with_system(&constraint);
 
     // let model: &str = "gpt-3.5-turbo";
     // let model: &str = "claude-3-haiku-20240307";

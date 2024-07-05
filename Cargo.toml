@@ -20,5 +20,6 @@ codegen-units = 1  # Maximize size reduction optimizations.
 tokio = { version = "1", features = ["full"] }
 # -- GenAI
 genai = "=0.1.1" # the equal sign before the version is required to lock to a specific version. ==0.1.1
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] } # for serializing and deserializing
+serde_json = "1.0" # for serializing and deserializing JSON
+clap = { version = "3.0", features = ["derive"] } # for command line arguments

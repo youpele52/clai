@@ -3,6 +3,7 @@ use genai::client::Client;
 use genai::utils::print_chat_stream;
 
 // both files are in the same directory or modules, hence we use super
+use super::ai_model_state::AIModel;
 use super::question_state::{Question, Questions};
 
 #[tokio::main]
@@ -14,6 +15,12 @@ pub async fn talk_to_ai(
     let mut question_list: Questions = Questions::load_questions().unwrap_or_else(|_| Questions {
         questions: Vec::new(),
     });
+
+    // load the ai model
+    let ai_model: AIModel = match AIModel::load_model() {
+        Ok(model) => model,
+        Err(error) => panic!("\n\nPlease set an AI model.\n\n{error:?}"),
+    };
 
     // add a new question
     question_list.questions.push(Question {
@@ -30,7 +37,9 @@ pub async fn talk_to_ai(
 
     // let model: &str = "gpt-3.5-turbo";
     // let model: &str = "claude-3-haiku-20240307";
-    let model: &str = "gemini-1.5-flash-latest";
+    // let model: &str = "gemini-1.5-flash-latest";
+    let model: &str = ai_model.model.as_str();
+
     // let model: &str = "llma3";
     // let model: &str = "mixtral";
 

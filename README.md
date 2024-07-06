@@ -2,7 +2,7 @@
 
 this is a simple command line based program built using [`Rust`](https://www.rust-lang.org/) and [`rust-genai`](https://github.com/jeremychone/rust-genai).
 
-by default, the program uses [`gemini`](https://developers.googleblog.com/en/gemini-15-pro-and-15-flash-now-available/) AI model. But this can be changed in talk_to_ai.rs file. The length of your reponse can also be adjusted in this file. 
+by default, the program uses [`gemini`](https://developers.googleblog.com/en/gemini-15-pro-and-15-flash-now-available/) AI model, but this can be changed using the set command in [how to run.](#how-to-run) 
 
 
 ## installation
@@ -13,6 +13,7 @@ by default, the program uses [`gemini`](https://developers.googleblog.com/en/gem
 ```
 cargo build --release
 ```
+
 
 to use the program already, you can jump to [how to run](#how-to-run).
 
@@ -44,11 +45,25 @@ clai q "your query"
 
 ## how to run
 
-* navigate to the project's main folder and run this command in your terminal
+navigate to the project's main folder and run these commands in your terminal
+
+* set the AI model
+
+```
+cargo run set "ai-model"
+```
 
 ```
 export GEMINI_API_KEY="your_api_key"
 ```
+
+if you are using openai, after setting the model using the above command, you can export the key like so 
+
+```
+export OPENAI_API_KEY="your_api_key"
+```
+
+
 
 * then run this to make your query
 
@@ -72,7 +87,4 @@ conversations between the user and the AI is saved locally and is managed using 
 cargo run d
 ```
 
-/Users/youpele/DevWorld/clai/target/release/clai
-
-echo 'export PATH="$PATH:/Users/youpele/DevWorld/clai/target/release"' >> ~/.zshrc
 

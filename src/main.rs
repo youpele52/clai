@@ -9,5 +9,6 @@ fn main() {
         Commands::Question { query, constraint } => Cli::ask_question(query, constraint),
         Commands::Delete => Cli::delete(),
         Commands::Help => Cli::help(),
+        Commands::SetAIModel { model } => Cli::set_ai_model(model),
     };
 }

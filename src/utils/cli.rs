@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
 use std::error::Error;
 
+use super::ai_model_state::AIModel;
 use super::question_state::Questions;
 use super::talk_to_ai;
 
@@ -23,6 +24,9 @@ pub enum Commands {
 
     #[clap(alias = "d")]
     Delete,
+
+    #[clap(alias = "set")]
+    SetAIModel { model: String },
 
     #[clap(alias = "h")]
     Help,
@@ -49,6 +53,10 @@ impl Cli {
 
     pub fn help() -> Result<(), Box<dyn Error>> {
         println!("Clai - A simple command line based program built using Rust and rust-genai.\nType 'clai -h' to see help");
+        Ok(())
+    }
+    pub fn set_ai_model(model: String) -> Result<(), Box<dyn Error>> {
+        AIModel::save_model(model)?;
         Ok(())
     }
 }
